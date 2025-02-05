@@ -30,6 +30,20 @@ class TaskViewModel(context: Context) : ViewModel() {
         }
     }
 
+    fun addTask(title: String, body: String?, startTime: String, endTime: String) {
+        viewModelScope.launch {
+            val newTask = TaskDTO(
+                id = generateTaskId(),
+                title = title,
+                body = body,
+                startTime = startTime,
+                endTime = endTime
+            )
+            repository.addTask(newTask)
+            loadTasks()
+        }
+    }
+
     fun editTask(task: TaskDTO) {
         viewModelScope.launch {
             repository.editTask(task)
@@ -49,5 +63,9 @@ class TaskViewModel(context: Context) : ViewModel() {
             repository.toggleComplete(taskId)
             loadTasks()
         }
+    }
+
+    private fun generateTaskId(): Int {
+        return (tasks.value.maxOfOrNull { it.id } ?: 0) + 1
     }
 }
