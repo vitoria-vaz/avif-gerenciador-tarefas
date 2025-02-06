@@ -4,13 +4,17 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+kotlin {
+    tasks.register("testClasses")
+}
+
 android {
     namespace = "com.avif.myapplication"
     compileSdk = 35
 
     defaultConfig {
         applicationId = "com.avif.myapplication"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -59,4 +63,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation(libs.androidx.material)
+    implementation("androidx.compose.material3:material3:1.1.2")
 }
