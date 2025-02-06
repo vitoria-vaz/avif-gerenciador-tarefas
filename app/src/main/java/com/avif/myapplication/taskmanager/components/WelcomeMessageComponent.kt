@@ -17,13 +17,13 @@ import com.avif.myapplication.ui.theme.LightGray
 fun WelcomeMessageComponent() {
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Text(
-            text = "Hi Breens!",
+            text = "Bem vindo!",
             fontFamily = FontFamily(Font(R.font.nunito_extrabold)),
             fontSize = 22.sp
         )
 
         Text(
-            text = "8 tasks for today Monday",
+            text = "8 tarefas para Segunda Feira",
             fontFamily = FontFamily(Font(R.font.nunito_regular)),
             fontSize = 18.sp,
             color = LightGray

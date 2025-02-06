@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId = "com.avif.myapplication"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -63,6 +63,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation("androidx.compose.material:material:1.4.2")
-
+    implementation(libs.androidx.material)
+    implementation("androidx.compose.material3:material3:1.1.2")
 }

@@ -18,6 +18,8 @@ import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.Email
 //import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.Home
 //import androidx.compose.material.icons.filled.Mail
@@ -55,12 +57,10 @@ class MainActivity : ComponentActivity() {
                     ) {
                         screens.forEachIndexed { index, _ ->
                             val icon: ImageVector = when (index) {
-                                0 -> Icons.Filled.Home
                                 // removed for testing
-                                //0 -> Icons.Filled.CalendarMonth
+                                0 -> Icons.Filled.DateRange
                                 1 -> Icons.Filled.Home
-                                //    2 -> Icons.Filled.Mail
-                                2 -> Icons.Filled.Home
+                                2 -> Icons.Filled.Email
                                 else -> Icons.Filled.Home
                             }
                             BottomNavigationItem(
